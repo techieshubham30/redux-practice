@@ -1,0 +1,89 @@
+.product-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+    align-items: flex-start;
+    justify-content:space-between;
+    padding:1rem;
+    background-color:#d4d4d4;
+   
+}
+
+.vertical-card{
+    border:0.5px solid #ffffff;
+    min-width: 250px;
+    max-width: 320px;
+    width:25%;
+    border-radius:1rem;
+    background-color:#ffffff;
+}
+
+
+.card-img{
+    height: 25rem;
+    padding:1rem;
+    background-color:#a8e1c0;
+    border-radius:1rem;
+}
+
+img{
+    border-radius:1rem;
+    background-color:#a8e1c0;
+}
+
+.card-action,.card-content{
+    padding:1rem;
+}
+
+.card-content .card-title{
+    margin-bottom:1rem;
+   
+}
+
+.card-title, .card-discription{
+    white-space: nowrap; 
+    width: 100%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    cursor:pointer;
+    
+}
+
+.card-action{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.card-action button{
+    cursor:pointer;
+    letter-spacing:0.8px;
+}
+
+.primary-btn{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding: 0.5em 1.2em;
+    border-radius:2.3rem;
+    font-size:1.5rem;
+    gap:0.5rem;
+    color:white;
+    background:#7a96df;
+    margin-bottom:0.8rem;
+}
+
+.secondary-btn{
+    border-radius:5rem;
+    padding:0.5em;
+    color:white;
+    margin-bottom:0.8rem;
+}
+
+
+
+.card-discription{
+    font-size:1.3rem;
+    font-weight:400;
+}
