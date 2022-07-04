@@ -8,13 +8,8 @@ const ProductContainer = ({ productData, fetchProducts }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  return productData.loading ? (
-    <h1>Loding...</h1>
-  ) : productData.error ? (
-    <h2>{productData.error}</h2>
-  ) : (
+  return (
     <div>
-      <h2>Product List</h2>{" "}
       <div className="product-container">
         {productData &&
           productData.products &&

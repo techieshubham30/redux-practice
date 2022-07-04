@@ -1,106 +1,31 @@
-/* 
-.horizontal-card{
-    display: flex;
-    align-items:center;
-    gap:1rem;
-    border:0.5px solid gray;
-    border-radius: 2rem;
-    padding:1rem;
-    width:50%;
-    margin: 0 auto;
-    background-color:#ffffff;
-    
-}
-
-.horizontal-card .card-image-container{
-    width: 130px;
-    height: 150px;
-
-}
-
-.horizontal-card .card-text-container{
-    width: calc(100% - 130px);
-}
-
-.horizontal-card .card-text-container{
-    padding: 1rem;
-}
-/* 
-.card-image-container{
-    margin-bottom: 1em;
-} */
-
-/* .card-image-container img{
-    border-radius: 0.3rem;
-}
 
 
-.card-text-container{
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem 0 1rem;
-}
-
-.card-title{
-    position: relative;
-    opacity: 0.90;
-    display: flex;
-    align-items: center;
-    margin-bottom: 1em;
-}
- */
-
-
-/* 
-.card-sub-title{
-    opacity: 0.80;
-    margin-bottom: 1em;
-}
-
-.card-description{
-    margin-bottom: 2em;
-    opacity: 0.90;
-    font-size:1.3rem;
-    font-weight:400;
-}
-
-.horizontal-card-container{
-    padding:3rem;
-    background-color:#d4d4d4;
-    height:100vh;
-}
-
-.card-price{
-    display:flex;
-    justify-content:space-between;
-}
-
-.rating{
+.wrapper{
     background-color:#a8e1c0;
-} */ 
-
-
-
+}
 .product-details-container{
     /* border:1px solid red; */
     display: flex;
-    gap:2rem;
-    width:90%;
+    justify-content:space-between;
+    width:95%;
     margin:0 auto;
     height:100vh;
-    padding:2rem;
+    padding:4rem;
+    background-color:#ffffff;
 }
 
+
 .product-image{
-  width:40%;  
+  width:30%;  
   height:70%;
-  border:0.1px solid gray;
+  border:0.1px solid rgb(128,128,128,0.4);
   padding:1rem;
 }
 
 .product-details{
   /* border:1px solid red; */
   padding:2rem;
+  width:68%;
 }
 
 .product-category{
@@ -108,10 +33,52 @@
 }
 
 .product-rating{
-    background-color:#a8e1c0;
+    background-color:#388e3c;
     display:flex;
+    gap:0.3rem;
     align-items:center;
-    width:fit-content;
-    padding:0.2rem;
+    padding:0.3em 0.6em;
+    border-radius:0.4rem;
     color:#ffffff;
+    font-weight:700;
+    font-size:1.2rem;
+    margin-bottom:1.5rem;
+}
+
+.rating-details p{
+    color:gray;
+    font-size:1.5rem;
+}
+
+.rating-details{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    /* border:1px solid red; */
+}
+
+.product-description{
+    font-size:1.5rem;
+    font-weight:300;
+    margin-bottom:1rem;
+}
+
+.product-price{
+  font-size:2.8rem;
+  margin-bottom:2rem;
+}
+
+.delivery{
+    display:flex;
+    gap:2rem;
+}
+
+.delivery span{
+    font-weight:500;
+    color: gray;
+    font-size:1.5rem;
+}
+.pin-input{
+    border-bottom:2px solid #2874f0;
+    padding:0.5rem;
 }
