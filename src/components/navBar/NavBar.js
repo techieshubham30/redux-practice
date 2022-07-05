@@ -21,7 +21,7 @@ const NavBar = () => {
             />
           </form>
         </div>
-        <div className="nav-right"></div>
+       
       </nav>
     </header>
   );

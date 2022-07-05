@@ -22,6 +22,7 @@ const ProductCard = (props) => {
         <Link to={`/products/${id}`}>
           <button className="secondary-btn">
             <GrView />
+            view
           </button>
         </Link>
         <button className="primary-btn" onClick={() => deleteProduct(id)}>
