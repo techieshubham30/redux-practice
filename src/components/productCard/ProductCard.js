@@ -2,7 +2,7 @@ import { deleteProduct } from "../../actions/product";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
-import { GrView } from "react-icons/gr";
+import { BsEyeFill } from "react-icons/bs";
 
 const ProductCard = (props) => {
   const { deleteProduct, title, image, description, id } = props;
@@ -20,12 +20,12 @@ const ProductCard = (props) => {
 
       <div className="card-action">
         <Link to={`/products/${id}`}>
-          <button className="secondary-btn">
-            <GrView />
-            view
+          <button className="primary-btn view">
+            <BsEyeFill />
+            View
           </button>
         </Link>
-        <button className="primary-btn" onClick={() => deleteProduct(id)}>
+        <button className="primary-btn del" onClick={() => deleteProduct(id)}>
           <MdDelete />
           Delete
         </button>

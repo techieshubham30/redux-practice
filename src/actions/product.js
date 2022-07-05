@@ -3,6 +3,7 @@ import {
   FETCH_PRODUCTS_FAILURE,
   FETCH_PRODUCTS_SUCCESS,
   DELETE_PRODUCT_FROM_LIST,
+  FILTER_PRODUCT_FROM_LIST,
 } from "../productTypes";
 
 const fetchProductsSucess = (products) => {
@@ -41,9 +42,19 @@ const fetchProducts = () => {
   };
 };
 
+const filterProducts = (filterVal) => {
+  return (dispatch) => {
+    dispatch({
+      type: FILTER_PRODUCT_FROM_LIST,
+      payload: filterVal,
+    })
+  }
+};
+
 export {
   fetchProductsSucess,
   fetchProductsFailure,
   fetchProducts,
   deleteProduct,
+  filterProducts
 };

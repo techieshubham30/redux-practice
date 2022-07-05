@@ -8,12 +8,14 @@ const ProductContainer = ({ productData, fetchProducts }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  return (
-    <div>
+  console.log(productData)
+  return ( 
+  <>
+    {(productData.loading===true)?<div>Loading ...</div>:
+    <div className="product-content">
       <div className="product-container">
-        {productData &&
-          productData.products &&
-          productData.products.map((product) => {
+        {
+          productData?.products.map((product) => {
             return (
               <div key={product.id} className="vertical-card">
                 <ProductCard
@@ -26,7 +28,10 @@ const ProductContainer = ({ productData, fetchProducts }) => {
             );
           })}
       </div>
-    </div>
+    </div>}
+  </>
+    
+    
   );
 };
 
