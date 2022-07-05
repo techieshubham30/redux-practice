@@ -1,11 +1,10 @@
 import "./navbar.css";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import {BsSearch} from 'react-icons/bs'
 import { connect } from "react-redux";
-import { filterProducts } from "../../actions/product";
+import { searchProducts } from "../../actions/product";
+import { BsSearch } from "react-icons/bs";
 
-const NavBar = ({filterProducts}) => {
+const NavBar = ({ searchProducts }) => {
   return (
     <header className="header shadow-box">
       <nav className="navbar">
@@ -22,20 +21,19 @@ const NavBar = ({filterProducts}) => {
               type="text"
               className="search-bar"
               placeholder="Search Products"
-              onChange={(e)=>filterProducts(e.target.value)}
+              onChange={(e) => searchProducts(e.target.value)}
             />
           </form>
         </div>
-        <div className="nav-right"></div>
       </nav>
     </header>
   );
 };
 
 const mapDispatchToProp = (dispatch) => {
-  console.log(dispatch)
   return {
-    filterProducts: (search) => dispatch(filterProducts(search)),
-  }
-}
-export default connect(null,mapDispatchToProp)(NavBar);
+    searchProducts: (e) => dispatch(searchProducts(e)),
+  };
+};
+
+export default connect(null, mapDispatchToProp)(NavBar);

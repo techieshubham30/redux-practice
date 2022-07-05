@@ -2,13 +2,13 @@ import {
   FETCH_PRODUCTS_SUCCESS,
   FETCH_PRODUCTS_FAILURE,
   DELETE_PRODUCT_FROM_LIST,
-  FILTER_PRODUCT_FROM_LIST
+  SEARCH_PRODUCTS,
 } from "../productTypes";
 
 const initialState = {
   loading: true,
   products: [],
-  filteredProducts:[],
+  filterProducts: [],
   error: "",
 };
 
@@ -18,6 +18,7 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         products: action.payload,
+        filterProducts: action.payload,
         loading: false,
       };
 
@@ -35,19 +36,13 @@ const productReducer = (state = initialState, action) => {
           (product) => product.id !== action.payload
         ),
       };
-    case FILTER_PRODUCT_FROM_LIST:
-      if(action.payload===''){
-        return {
-          ...state,
-          filteredProducts: state.products,
-        }
-      }
+    case SEARCH_PRODUCTS:
       return {
         ...state,
-        filteredProducts : state.products.filter(
-          (product) => product.title.toLowerCase().includes(action.payload.toLowerCase())
+        products: state.filterProducts.filter((product) =>
+          product.title.toLowerCase().includes(action.payload.toLowerCase())
         ),
-      }
+      };
     default:
       return state;
   }
