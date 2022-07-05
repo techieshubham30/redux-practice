@@ -1,7 +1,9 @@
 import "./navbar.css";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { searchProducts } from "../../actions/product";
 
-const NavBar = () => {
+const NavBar = ({ searchProducts }) => {
   return (
     <header className="header shadow-box">
       <nav className="navbar">
@@ -18,13 +20,19 @@ const NavBar = () => {
               type="text"
               className="search-bar"
               placeholder="Search Products"
+              onChange={(e) => searchProducts(e.target.value)}
             />
           </form>
         </div>
-       
       </nav>
     </header>
   );
 };
 
-export { NavBar };
+const mapDispatchToProp = (dispatch) => {
+  return {
+    searchProducts: (e) => dispatch(searchProducts(e)),
+  };
+};
+
+export default connect(null, mapDispatchToProp)(NavBar);

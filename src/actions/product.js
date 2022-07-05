@@ -3,6 +3,7 @@ import {
   FETCH_PRODUCTS_FAILURE,
   FETCH_PRODUCTS_SUCCESS,
   DELETE_PRODUCT_FROM_LIST,
+  SEARCH_PRODUCTS,
 } from "../productTypes";
 
 const fetchProductsSucess = (products) => {
@@ -26,6 +27,13 @@ const deleteProduct = (id) => {
   };
 };
 
+const searchProducts = (str) => {
+  return {
+    type: SEARCH_PRODUCTS,
+    payload: str,
+  };
+};
+
 const fetchProducts = () => {
   return (dispatch) => {
     axios
@@ -46,4 +54,5 @@ export {
   fetchProductsFailure,
   fetchProducts,
   deleteProduct,
+  searchProducts,
 };

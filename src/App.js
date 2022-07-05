@@ -1,5 +1,5 @@
 import "./App.css";
-import { NavBar } from "./components/navBar/NavBar";
+import  NavBar  from "./components/navBar/NavBar";
 import { PublicRoutes } from "./routes/PublicRoutes";
 
 function App() {
