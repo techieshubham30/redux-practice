@@ -7,6 +7,7 @@
     display:flex;
     flex-direction: row;
     padding:2rem 10rem;
+   
     
 }
 
@@ -193,4 +194,10 @@
         margin:1rem 0 0 0 ;
         
     }
+}
+.empty-container{
+    position:absolute;
+    top:40%;
+    left:38%;
+    font-size:4rem;
 }

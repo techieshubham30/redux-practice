@@ -6,7 +6,7 @@ import { fetchProduct } from "../../actions/singleProductAction";
 import "./single-product.css";
 import { addToCart } from "../../actions/cartActions";
 
-const SingleProduct = ({ product, fetchProduct,addToCart }) => {
+const SingleProduct = ({ product, fetchProduct, addToCart }) => {
   const [pinCode, setPinCode] = useState("");
   const { productId } = useParams();
   useEffect(() => {
@@ -17,7 +17,21 @@ const SingleProduct = ({ product, fetchProduct,addToCart }) => {
       {product.product && (
         <div className="product-details-container">
           <div className="product-image">
-            <img src={product.product.image} />        
+            <img src={product.product.image} />
+            <div className="single-product-action">
+              <button
+                className="add-to-cart"
+                onClick={() => addToCart(product.product)}
+              >
+                Add To Cart
+              </button>
+              <button
+                className="add-to-wishlist"
+                onClick={() => addToCart(product.product)}
+              >
+                Wishlist
+              </button>
+            </div>
           </div>
           <div className="product-details">
             <h1 className="product-title">{product.product.title}</h1>
@@ -68,9 +82,6 @@ const SingleProduct = ({ product, fetchProduct,addToCart }) => {
                 <li>No Returns Applicable</li>
               </ul>
             </div>
-            <button className="add-btn" onClick={()=>addToCart(product.product)}>
-                Add To Cart
-            </button>
           </div>
         </div>
       )}
@@ -87,7 +98,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProp = (dispatch) => {
   return {
     fetchProduct: (productId) => dispatch(fetchProduct(productId)),
-    addToCart : (product) => dispatch(addToCart(product))
+    addToCart: (product) => dispatch(addToCart(product)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProp)(SingleProduct);
