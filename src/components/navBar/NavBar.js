@@ -29,7 +29,7 @@ const NavBar = ({ searchProducts,cart }) => {
         <div className="nav-right">
           <Link to="/cart">
             <BsCartFill className="cart-icon" />
-            <span>{cart.cartProducts.length}</span>
+            <span className="cart-counter">{cart.cartProducts.length}</span>
           </Link>
         </div>
       </nav>
