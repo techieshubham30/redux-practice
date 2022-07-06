@@ -36,13 +36,13 @@ const SingleProduct = ({ product, fetchProduct }) => {
               <input
                 className="pin-input"
                 type="number"
-              
                 value={pinCode}
                 onChange={(e) =>
                   e.target.value.length > 6
-                    ? setPinCode("")
+                    ? setPinCode((prev) => prev)
                     : setPinCode(e.target.value)
                 }
+                onKeyDown={(evt) => evt.key === "e" && evt.preventDefault()}
               />
             </div>
             <div className="flex">

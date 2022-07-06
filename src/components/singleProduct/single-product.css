@@ -118,7 +118,7 @@
     display:flex;
     width:40%;
     justify-content:space-between;
-    
+   
     
 }
 
@@ -135,8 +135,9 @@
 
 .seller{
     display:flex;
+    width:34%;
+    justify-content:space-between;
     gap:4rem;
-    align-items:center;
 }
 
 input[type=number]::-webkit-inner-spin-button, 
@@ -176,8 +177,12 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .higlights,.services{
-        /* border:1px solid red; */
         flex-direction:column;
         gap:0.5rem;
+    }
+    .seller{
+        flex-direction:column;
+        gap:0.5rem;
+        width:40%;
     }
 }

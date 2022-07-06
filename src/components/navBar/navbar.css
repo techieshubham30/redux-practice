@@ -95,6 +95,15 @@
     color: var(--light-black);
 }
 
+ .cart-icon{
+    font-size:1.8rem;
+    color: rgb(0,0,0,.60);
+}
+
+.cart-icon:hover{
+    color:black;
+}
+
 /* .shadow-box{
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
 } */

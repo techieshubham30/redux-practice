@@ -2,7 +2,7 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { searchProducts } from "../../actions/product";
-import { BsSearch } from "react-icons/bs";
+import { BsSearch, BsCartFill } from "react-icons/bs";
 
 const NavBar = ({ searchProducts }) => {
   return (
@@ -16,7 +16,7 @@ const NavBar = ({ searchProducts }) => {
 
         <div className="nav-center">
           <form className="search-bar-container">
-            <BsSearch className="search-icon"/>
+            <BsSearch className="search-icon" />
             <input
               type="text"
               className="search-bar"
@@ -24,6 +24,12 @@ const NavBar = ({ searchProducts }) => {
               onChange={(e) => searchProducts(e.target.value)}
             />
           </form>
+        </div>
+
+        <div className="nav-right">
+          <Link to="/cart">
+            <BsCartFill className="cart-icon" />
+          </Link>
         </div>
       </nav>
     </header>
