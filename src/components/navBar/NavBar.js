@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { searchProducts } from "../../actions/product";
 import { BsSearch, BsCartFill } from "react-icons/bs";
 
-const NavBar = ({ searchProducts }) => {
+const NavBar = ({ searchProducts,cart }) => {
   return (
     <header className="header shadow-box">
       <nav className="navbar">
@@ -29,17 +29,22 @@ const NavBar = ({ searchProducts }) => {
         <div className="nav-right">
           <Link to="/cart">
             <BsCartFill className="cart-icon" />
+            <span>{cart.cartProducts.length}</span>
           </Link>
         </div>
       </nav>
     </header>
   );
 };
-
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cartReducer
+  }
+}
 const mapDispatchToProp = (dispatch) => {
   return {
     searchProducts: (e) => dispatch(searchProducts(e)),
   };
 };
 
-export default connect(null, mapDispatchToProp)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProp)(NavBar);

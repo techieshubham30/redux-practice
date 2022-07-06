@@ -8,7 +8,6 @@ const ProductContainer = ({ productData, fetchProducts }) => {
   useEffect(() => {
     fetchProducts();
   }, []);
-  console.log(productData)
   return ( 
   <>
     {(productData.loading===true)?<div>Loading ...</div>:

@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import ProductContainer from "../components/ProductContainer";
 import SingleProduct from "../components/singleProduct/SingleProduct";
 import { PrivateRoutes } from "./PrivateRoutes";
-import { Cart } from "../components/cart/Cart";
+import Cart from "../components/cart/Cart";
 
 const PublicRoutes = () => {
   return (

@@ -42,6 +42,7 @@
 
 img{
     border-radius:1rem;
+    object-fit: contain;
 }
 
 .card-action,.card-content{

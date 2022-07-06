@@ -4,20 +4,23 @@ import { connect } from "react-redux";
 import { MdStar } from "react-icons/md";
 import { fetchProduct } from "../../actions/singleProductAction";
 import "./single-product.css";
+import { addToCart } from "../../actions/cartActions";
 
-const SingleProduct = ({ product, fetchProduct }) => {
+const SingleProduct = ({ product, fetchProduct,addToCart }) => {
   const [pinCode, setPinCode] = useState("");
   const { productId } = useParams();
   useEffect(() => {
     fetchProduct(productId);
   }, []);
-  console.log(product);
   return (
     <div className="wrapper">
       {product.product && (
         <div className="product-details-container">
           <div className="product-image">
             <img src={product.product.image} />
+            <button className="add-btn" onClick={()=>addToCart(product.product)}>
+              Add To Cart
+            </button>
           </div>
           <div className="product-details">
             <h1 className="product-title">{product.product.title}</h1>
@@ -84,6 +87,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProp = (dispatch) => {
   return {
     fetchProduct: (productId) => dispatch(fetchProduct(productId)),
+    addToCart : (product) => dispatch(addToCart(product))
   };
 };
 export default connect(mapStateToProps, mapDispatchToProp)(SingleProduct);
