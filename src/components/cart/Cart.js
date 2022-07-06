@@ -1,5 +1,6 @@
+import "./cart.css";
 const Cart = () => {
-  return <div>I am Cart</div>;
+  return <div></div>;
 };
 
 export { Cart };
