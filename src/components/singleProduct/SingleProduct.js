@@ -17,10 +17,7 @@ const SingleProduct = ({ product, fetchProduct,addToCart }) => {
       {product.product && (
         <div className="product-details-container">
           <div className="product-image">
-            <img src={product.product.image} />
-            <button className="add-btn" onClick={()=>addToCart(product.product)}>
-              Add To Cart
-            </button>
+            <img src={product.product.image} />        
           </div>
           <div className="product-details">
             <h1 className="product-title">{product.product.title}</h1>
@@ -71,6 +68,9 @@ const SingleProduct = ({ product, fetchProduct,addToCart }) => {
                 <li>No Returns Applicable</li>
               </ul>
             </div>
+            <button className="add-btn" onClick={()=>addToCart(product.product)}>
+                Add To Cart
+            </button>
           </div>
         </div>
       )}

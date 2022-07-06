@@ -2,15 +2,19 @@ import { connect } from "react-redux";
 import { removeFromCart } from "../../actions/cartActions";
 import "./cart.css"
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router-dom";
+
 const Cart = ({cart,removeFromCart}) => {
   let totalPrice = 0
   cart?.cartProducts?.map(({price}) => totalPrice+= parseInt(price))
   const totalItems = cart?.cartProducts?.length
+  console.log(totalItems)
   return (
     <div className="main-cart-content">
       <div className="cart-container">
       <div className="cart-details">
         <div className="cart-details-header">Cart</div>
+        {totalItems ===0 && <div className="cart-no-items">Your cart is empty.Add items to it now. <span><Link to='/'>Shop now.</Link></span> </div>}
         {cart?.cartProducts?.map(product=> {
             return (
               <div className="product-content-container" key ={product.id}>
@@ -40,7 +44,7 @@ const Cart = ({cart,removeFromCart}) => {
             )
         })}
       </div>
-      <div className="cart-checkout">
+      {(totalItems!==0) && <div className="cart-checkout">
         <div className="cart-checkout-header">Checkout</div>
         <div className="cart-checkout-detail" >
           <div className="cart-price">
@@ -60,7 +64,8 @@ const Cart = ({cart,removeFromCart}) => {
             <div className="cart-price-val">₹ {totalPrice}</div>
           </div>
         </div>
-      </div>
+      </div>}
+      
         
     </div>
     </div>

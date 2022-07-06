@@ -28,8 +28,10 @@ const NavBar = ({ searchProducts,cart }) => {
 
         <div className="nav-right">
           <Link to="/cart">
-            <BsCartFill className="cart-icon" />
-            <span>{cart.cartProducts.length}</span>
+            <div className="cart-wrapper">
+              <BsCartFill className="cart-icon" />
+              <span>{cart.cartProducts.length}</span>
+            </div>
           </Link>
         </div>
       </nav>
