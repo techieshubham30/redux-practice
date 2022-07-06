@@ -1,21 +1,17 @@
 import { Navigate } from "react-router-dom";
 
 const PrivateRoutes = ({ children }) => {
-  const users = [{ name: "shubham" }, { name: "gaurav" }, { name: "amitesh" }];
+  const users = ["shubham", "gaurav"];
 
   const isAuthenticated = localStorage.getItem("token");
 
-  return users.reduce((check, curr) => {
-    if (curr.name === isAuthenticated) {
-      check = true;
-      return true;
-    }
-    return check ? true : false;
-  }, false) ? (
+  return users.includes(isAuthenticated) ? (
     children
   ) : (
-    <Navigate to="/" />
+    <Navigate to="/" replace />
   );
 };
 
 export { PrivateRoutes };
+
+// find indexof some every
